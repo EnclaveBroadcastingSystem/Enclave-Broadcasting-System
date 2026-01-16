@@ -29,9 +29,9 @@ jobs:
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm i; fi
 
-      - name: Ensure web folder exists
+      - name: Verify web assets
         run: |
-          test -d public || (echo "Missing ./public folder" && exit 1)
+          test -d public || (echo "ERROR: ./public folder missing" && exit 1)
 
       - name: Create Capacitor config if missing
         run: |
@@ -57,7 +57,7 @@ EOF
           chmod +x gradlew
           ./gradlew assembleDebug
 
-      - name: Upload APK artifact
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: enclave-radio-debug-apk
