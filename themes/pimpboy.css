@@ -1,0 +1,27 @@
+/* Enclave theme (safe) */
+:root { --glow: rgba(124,255,176,.35); }
+body { color:#7CFFB0; font-family: ui-monospace, monospace; }
+
+/* Keep CONNECT exit animation */
+#connectOverlay.vault-exit {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Now Playing ticker */
+#nowPlaying { overflow:hidden; white-space:nowrap; }
+#nowPlaying .npLabel { display:inline-block; margin-right:.6em; }
+#nowPlaying .npText { display:inline-block; white-space:nowrap; }
+#nowPlaying.ticker .npText { padding-left:100%; animation: np-marquee 10s linear infinite; }
+@keyframes np-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-100%)} }
+
+/* Volume slider: use ONLY safe accent-color (no giant shadows / no custom track hacks) */
+#vol {
+  accent-color: #7CFFB0;
+}
+
+
+/* Volume row spacing tweak */
+.volRow { margin-top: 12px !important; }

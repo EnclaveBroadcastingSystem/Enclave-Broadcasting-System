@@ -1,0 +1,7 @@
+{
+  "channels": [
+    { "id": "music", "name": "MUSIC", "mode": "folder", "folder": "/audio/music" },
+    { "id": "voa",   "name": "ERN-02 — THE VOICE OF AMERICA", "mode": "folder", "folder": "/audio/voa" },
+    { "id": "dead",  "name": "DEAD SIGNAL", "mode": "folder", "folder": "/audio/dead" }
+  ]
+}

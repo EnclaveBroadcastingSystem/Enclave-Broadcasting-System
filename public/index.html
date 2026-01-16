@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enclave Radio</title>
+  <link rel="stylesheet" href="/public/styles.css" />
+  <link rel="stylesheet" href="/public/theme.css" />
+</head>
+<body>
+  <!-- CONNECT gate -->
+  <div id="connectOverlay">
+    <div class="connectWrap">
+      <button id="connectBtn" type="button">CONNECT</button>
+      <div id="connectSub" class="small">USER INTERACTION REQUIRED • TAP TO ARM AUDIO</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="row" style="justify-content:space-between;">
+        <div>
+          <div class="small">ENCLAVE COMMUNICATIONS DIVISION</div>
+          <div style="font-size:22px; letter-spacing:.14em; margin-top:6px;">SIGNAL LISTENER</div>
+        </div>
+        <div class="small" id="statusPill">AUDIO: LOCKED</div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <select id="channelSelect"></select>
+        <button class="primary" id="playBtn">PLAY</button>
+        <button id="stopBtn">STOP</button>
+      </div>
+
+      <div class="row volRow">
+        <div class="small volLabel">VOLUME</div>
+        <input id="vol" type="range" min="0" max="100" value="75" />
+        <div class="small volVal" id="volVal">75%</div>
+      </div>
+
+      <hr />
+
+      <div class="small" id="nowPlaying">CURRENTLY PLAYING —</div>
+      <div class="small" id="log" style="margin-top:10px; white-space:pre-wrap;"></div>
+    </div>
+  </div>
+
+  <!-- Single audio element = single source of truth -->
+  <audio id="radioAudio" preload="none"></audio>
+
+  <script src="/public/app.js"></script>
+</body>
+</html>
